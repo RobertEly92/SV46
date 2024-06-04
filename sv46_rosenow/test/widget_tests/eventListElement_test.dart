@@ -1,10 +1,15 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter/material.dart';
+import 'package:sv46_rosenow/presentation/eventPage/eventListElement_widget.dart';
+import 'widget_tests_setup.dart';
 
 void main() {
   testWidgets('test if all elements are visible', (WidgetTester tester) async {
-    await tester.pumpWidget(const EventListElement_widget());
+    
+    //TODO chekcn warum setuptester lokalization nicht mehr ltr problem löst
+    await setupTester(tester, const EventListElement_widget());
 
+
+    //TODO gegen variablen ersetzen
     // finders
     final headline = find.text('Headline');
     final time = find.text('18:30');
