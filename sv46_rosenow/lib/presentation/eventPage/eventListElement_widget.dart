@@ -3,7 +3,20 @@
 import 'package:flutter/material.dart';
 
 class EventListElement_widget extends StatefulWidget {
-  const EventListElement_widget({Key? key}) : super(key: key);
+  String eventHeadline;
+  String eventLocation;
+  String eventMeetingTime;
+  String eventRegistratedPeople;
+  String eventStartTime;
+
+  EventListElement_widget(
+      {Key? key,
+      required this.eventHeadline,
+      required this.eventLocation,
+      required this.eventMeetingTime,
+      required this.eventRegistratedPeople,
+      required this.eventStartTime})
+      : super(key: key);
 
   @override
   State<EventListElement_widget> createState() =>
@@ -11,57 +24,61 @@ class EventListElement_widget extends StatefulWidget {
 }
 
 class _EventListElement_widgetState extends State<EventListElement_widget> {
-bool? isChecked =false;
+  bool? isChecked = false;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Card(
-          borderOnForeground: true,
-          child: Column(
-            
-            children: [
-              const Row(
-                children: [
-                  Text(
-                    'Headline',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15.0),
-                  ),
-                  Text(
-                    '18:30',
-                    style: TextStyle(fontWeight: FontWeight.normal, fontSize: 12.0),
-                  )
-                ],
+        borderOnForeground: true,
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Text(
+                  widget.eventHeadline,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15.0),
+                ),
+                Text(
+                  widget.eventStartTime,
+                  style:
+                      TextStyle(fontWeight: FontWeight.normal, fontSize: 12.0),
+                )
+              ],
+            ),
+            Row(
+              children: [
+                Text(
+                  widget.eventLocation,
+                  style:
+                      TextStyle(fontWeight: FontWeight.normal, fontSize: 10.0),
+                ),
+                Text(
+                  widget.eventMeetingTime,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.normal, fontSize: 10.0),
+                )
+              ],
+            ),
+            Row(children: [
+              const Text(
+                '11',
+                style: TextStyle(fontWeight: FontWeight.normal, fontSize: 10.0),
               ),
-              Row(
-                children: [
-                  const Text(
-                    'Am Fettloch 8',
-                    style: TextStyle(fontWeight: FontWeight.normal, fontSize: 10.0),
-                  ),
-                  Card(
-                    child: Checkbox(
-                      value: isChecked,
-                      onChanged: (bool? value) {
-                        setState(() {
-                          isChecked = value;
-                        });
-                      },
-                    ),
-                  )
-                ],
-              ),
-              const Row(
-                  children: [
-                    Text(
-                      '11',
-                      style:
-                          TextStyle(fontWeight: FontWeight.normal, fontSize: 10.0),
-                    ),
-                  ])
-            ],
-          ),
+              Card(
+                child: Checkbox(
+                  value: isChecked,
+                  onChanged: (bool? value) {
+                    setState(() {
+                      isChecked = value;
+                    });
+                  },
+                ),
+              )
+            ])
+          ],
         ),
+      ),
     );
   }
 }
