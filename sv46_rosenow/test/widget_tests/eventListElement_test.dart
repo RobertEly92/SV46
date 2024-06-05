@@ -20,7 +20,6 @@ void main() {
             eventRegistratedPeople: t_registratedPeople,
             eventMeetingTime: t_meetingTime));
 
-    //TODO gegen variablen ersetzen
     // finders
     final headline = find.text(t_headline);
     final time = find.text(t_startTime);
@@ -33,5 +32,6 @@ void main() {
     expect(time, findsOneWidget);
     expect(location, findsOneWidget);
     expect(registratedPeople, findsOneWidget);
+    expect(meetingTime, findsOneWidget);
   });
 }
