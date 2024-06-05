@@ -28,30 +28,38 @@ class _EventListElement_widgetState extends State<EventListElement_widget> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Card(
+    return SizedBox(
+      height: 150,
+      width: 300,
+      child: Card(
+        elevation: 5,
+        margin: const EdgeInsets.all(5),
         borderOnForeground: true,
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   widget.eventHeadline,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15.0),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold, fontSize: 15.0),
                 ),
                 Text(
                   widget.eventStartTime,
-                  style:
-                      TextStyle(fontWeight: FontWeight.normal, fontSize: 12.0),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.normal, fontSize: 12.0),
                 )
               ],
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   widget.eventLocation,
-                  style:
-                      TextStyle(fontWeight: FontWeight.normal, fontSize: 10.0),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.normal, fontSize: 10.0),
                 ),
                 Text(
                   widget.eventMeetingTime,
@@ -60,7 +68,7 @@ class _EventListElement_widgetState extends State<EventListElement_widget> {
                 )
               ],
             ),
-            Row(children: [
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               const Text(
                 '11',
                 style: TextStyle(fontWeight: FontWeight.normal, fontSize: 10.0),

@@ -10,10 +10,35 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: EventListElement_widget()
+        body: Column(
+          children: [
+            Center(
+                child: EventListElement_widget(
+              eventHeadline: 'Training',
+              eventLocation: 'Am Fettloch 8, Rosenow',
+              eventStartTime: '18:30',
+              eventMeetingTime: '18:25',
+              eventRegistratedPeople: '11',
+            )),
+              Center(
+                child: EventListElement_widget(
+              eventHeadline: 'Training',
+              eventLocation: 'Am Fettloch 8, Rosenow',
+              eventStartTime: '18:30',
+              eventMeetingTime: '18:25',
+              eventRegistratedPeople: '11',
+            )),
+              Center(
+                child: EventListElement_widget(
+              eventHeadline: 'Training',
+              eventLocation: 'Am Fettloch 8, Rosenow',
+              eventStartTime: '18:30',
+              eventMeetingTime: '18:25',
+              eventRegistratedPeople: '11',
+            )),
+          ],
         ),
       ),
     );
