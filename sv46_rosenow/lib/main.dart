@@ -21,6 +21,7 @@ class MainApp extends StatelessWidget {
               eventStartTime: '18:30',
               eventMeetingTime: '18:25',
               eventRegistratedPeople: '11',
+              eventDate: '01.01.2024',
             )),
               Center(
                 child: EventListElement_widget(
@@ -29,6 +30,8 @@ class MainApp extends StatelessWidget {
               eventStartTime: '18:30',
               eventMeetingTime: '18:25',
               eventRegistratedPeople: '11',
+              eventDate: '05.01.2024',
+            
             )),
               Center(
                 child: EventListElement_widget(
@@ -37,6 +40,7 @@ class MainApp extends StatelessWidget {
               eventStartTime: '18:30',
               eventMeetingTime: '18:25',
               eventRegistratedPeople: '11',
+              eventDate: '10.01.2024',
             )),
           ],
         ),

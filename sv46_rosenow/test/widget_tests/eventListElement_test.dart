@@ -14,6 +14,7 @@ void main() {
     const String t_location = 'Am Fettloch 8';
     const String t_registratedPeople = '11';
     const String t_meetingTime = '18:20';
+    const String t_date = '15.06.2024';
 
     await tester.pumpWidget(buildTestableWidget(Scaffold(
         body: EventListElement_widget(
@@ -21,14 +22,16 @@ void main() {
             eventStartTime: t_startTime,
             eventLocation: t_location,
             eventRegistratedPeople: t_registratedPeople,
-            eventMeetingTime: t_meetingTime))));
+            eventMeetingTime: t_meetingTime,
+            eventDate: t_date))));
 
     // finders
     final headline = find.text(t_headline);
-    final time = find.text(t_startTime);
+    final time = find.text('Start: ${t_startTime}');
     final location = find.text(t_location);
-    final registratedPeople = find.text(t_registratedPeople);
-    final meetingTime = find.text(t_meetingTime);
+    final registratedPeople = find.text('Angemeldet: ${t_registratedPeople}');
+    final meetingTime = find.text('Treff: ${t_meetingTime}');
+    final date = find.text(t_date);
 
     //check if state is correct
     expect(headline, findsOneWidget);
@@ -36,5 +39,6 @@ void main() {
     expect(location, findsOneWidget);
     expect(registratedPeople, findsOneWidget);
     expect(meetingTime, findsOneWidget);
+    expect(date, findsOneWidget);
   });
 }

@@ -8,6 +8,7 @@ class EventListElement_widget extends StatefulWidget {
   String eventMeetingTime;
   String eventRegistratedPeople;
   String eventStartTime;
+  String eventDate;
 
   EventListElement_widget(
       {Key? key,
@@ -15,7 +16,8 @@ class EventListElement_widget extends StatefulWidget {
       required this.eventLocation,
       required this.eventMeetingTime,
       required this.eventRegistratedPeople,
-      required this.eventStartTime})
+      required this.eventStartTime,
+      required this.eventDate})
       : super(key: key);
 
   @override
@@ -29,62 +31,61 @@ class _EventListElement_widgetState extends State<EventListElement_widget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 150,
-      width: 300,
+      height: 110,
+      
       child: Card(
         elevation: 5,
-        margin: const EdgeInsets.all(5),
+        margin: const EdgeInsets.all(10),
         borderOnForeground: true,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    widget.eventHeadline,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 25.0),
+                  ),
+                  Text(
+                    widget.eventDate,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 15.0),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    widget.eventLocation,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.normal, fontSize: 12.0),
+                  ),
+                  Text(
+                    'Start: ${widget.eventStartTime}',
+                    style: const TextStyle(
+                        fontWeight: FontWeight.normal, fontSize: 15.0),
+                  ),
+                ],
+              ),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 Text(
-                  widget.eventHeadline,
+                  'Angemeldet: ${widget.eventRegistratedPeople}',
                   style: const TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: 15.0),
+                      fontWeight: FontWeight.normal, fontSize: 12.0),
                 ),
                 Text(
-                  widget.eventStartTime,
+                  'Treff: ${widget.eventMeetingTime}',
                   style: const TextStyle(
                       fontWeight: FontWeight.normal, fontSize: 12.0),
                 )
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  widget.eventLocation,
-                  style: const TextStyle(
-                      fontWeight: FontWeight.normal, fontSize: 10.0),
-                ),
-                Text(
-                  widget.eventMeetingTime,
-                  style: const TextStyle(
-                      fontWeight: FontWeight.normal, fontSize: 10.0),
-                )
-              ],
-            ),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              const Text(
-                '11',
-                style: TextStyle(fontWeight: FontWeight.normal, fontSize: 10.0),
-              ),
-              Card(
-                child: Checkbox(
-                  value: isChecked,
-                  onChanged: (bool? value) {
-                    setState(() {
-                      isChecked = value;
-                    });
-                  },
-                ),
-              )
-            ])
-          ],
+              ])
+            ],
+          ),
         ),
       ),
     );
