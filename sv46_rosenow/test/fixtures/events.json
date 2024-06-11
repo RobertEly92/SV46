@@ -1,0 +1,35 @@
+[
+    {
+        "eventHeadline": "Training",
+        "eventLocation": "Am Fettloch 8, Rosenow",
+        "eventMeetingTime": "18:20",
+        "eventRegistratedPeople": "11",
+        "eventStartTime": "18:30",
+        "eventDate": "03.06.2024"
+    },
+    {
+        "eventHeadline": "Training",
+        "eventLocation": "Am Fettloch 8, Rosenow",
+        "eventMeetingTime": "18:20",
+        "eventRegistratedPeople": "11",
+        "eventStartTime": "18:30",
+        "eventDate": "10.06.2024"
+    },
+    {
+        "eventHeadline": "Training",
+        "eventLocation": "Am Fettloch 8, Rosenow",
+        "eventMeetingTime": "18:20",
+        "eventRegistratedPeople": "11",
+        "eventStartTime": "18:30",
+        "eventDate": "17.06.2024"
+    },
+    {
+        "eventHeadline": "EM schauen",
+        "eventLocation": "Am Fettloch 8, Rosenow",
+        "eventMeetingTime": "20:45",
+        "eventRegistratedPeople": "11",
+        "eventStartTime": "21:00",
+        "eventDate": "14.06.2024"
+    },
+    
+]
