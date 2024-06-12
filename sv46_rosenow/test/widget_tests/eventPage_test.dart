@@ -11,20 +11,31 @@ void main() {
         data: const MediaQueryData(), child: MaterialApp(home: widget));
   }
 
-  testWidgets('test if list shows evenets', (WidgetTester tester) async {
-    List<EventListElement_widget> events = [];
-    for (var element in fixture('events.json')) {
-  events.add(element);      
-    }
-    await tester.pumpWidget(EventPage(events: fixture('events.json'),));
+  testWidgets('test if list shows events', (WidgetTester tester) async {
+    List<EventListElement_widget> events = [
+      EventListElement_widget(
+          eventHeadline: "Training",
+          eventLocation: "Am Fettloch 8, Rosenow",
+          eventMeetingTime: "18:20",
+          eventRegistratedPeople: "11",
+          eventStartTime: "18:30",
+          eventDate: "03.06.2024"),
+      EventListElement_widget(
+          eventHeadline: "Training",
+          eventLocation: "Am Fettloch 8, Rosenow",
+          eventMeetingTime: "18:20",
+          eventRegistratedPeople: "11",
+          eventStartTime: "18:30",
+          eventDate: "10.06.2024"),
+    ];
+    await tester.pumpWidget(buildTestableWidget(EventPage(
+      events: events,
+    )));
 
     //finders
-    final EventListElement_widget t_event = EventListElement_widget(
-        eventHeadline: 'eventHeadline',
-        eventLocation: 'eventLocation',
-        eventMeetingTime: 'eventMeetingTime',
-        eventRegistratedPeople: 'eventRegistratedPeople',
-        eventStartTime: 'eventStartTime',
-        eventDate: 'eventDate');
+    List<Widget> list = tester.widgetList(find.byType(EventListElement_widget)).toList();
+
+    //verify
+    expect(list.length, 2);
   });
 }
